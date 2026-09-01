@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "forensics-cli"
+version = "0.1.0"
+description = "Unified CLI for forensic toolkit"
+requires-python = ">=3.10"
+dependencies = [
+    "forensics-core",
+    "forensics-imaging",
+    "click>=8.0",
+    "rich>=13.0",
+]
+
+[project.scripts]
+forensic-toolkit = "forensics_cli.main:cli"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]

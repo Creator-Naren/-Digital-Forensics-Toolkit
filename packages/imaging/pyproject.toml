@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "forensics-imaging"
+version = "0.1.0"
+description = "Disk imaging module using FTK Imager"
+requires-python = ">=3.10"
+dependencies = [
+    "forensics-core",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-mock>=3.0",
+]
