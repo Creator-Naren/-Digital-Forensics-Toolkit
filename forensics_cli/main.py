@@ -40,9 +40,20 @@ def create(name, investigator):
 def list_cases():
     """List all cases."""
     from forensics_core.database import Database
+    from rich.panel import Panel
 
     db = Database()
     cases = db.list_cases()
+
+    if not cases:
+        console.print(Panel(
+            "[yellow]No cases found.[/yellow]\n\nCreate your first case using:\n  [bold cyan]forensic-toolkit case create --name \"<name>\"[/bold cyan]",
+            title="Cases",
+            border_style="yellow",
+            expand=False
+        ))
+        return
+
     table = Table(title="Cases")
     table.add_column("ID")
     table.add_column("Name")

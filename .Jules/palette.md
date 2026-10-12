@@ -1,0 +1,3 @@
+## 2024-03-21 - CLI Empty State Guidance
+**Learning:** Empty tables in CLI output (like cases lists) offer no affordance for users on what to do next. When returning empty data, falling back to a structured table without data is frustrating.
+**Action:** Always provide an actionable empty state. Use `rich.panel.Panel` in CLI apps to present a helpful message with the exact command needed to populate the data.
