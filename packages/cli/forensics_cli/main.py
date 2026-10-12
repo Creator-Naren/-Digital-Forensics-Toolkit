@@ -40,10 +40,20 @@ def create(name, investigator):
 def list_cases():
     """List all cases."""
     from forensics_core.database import Database
+    from rich import box
 
     db = Database()
     cases = db.list_cases()
-    table = Table(title="Cases")
+    table = Table(
+        title="Cases",
+        box=box.HEAVY,
+        border_style="black on #39ff14",
+        header_style="bold black on #39ff14",
+        style="black on #39ff14",
+        row_styles=["black on #39ff14"],
+        title_style="bold black on #39ff14",
+        show_lines=True
+    )
     table.add_column("ID")
     table.add_column("Name")
     table.add_column("Investigator")
