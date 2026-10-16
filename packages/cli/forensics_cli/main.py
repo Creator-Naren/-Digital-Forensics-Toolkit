@@ -44,6 +44,11 @@ def list_cases():
 
     db = Database()
     cases = db.list_cases()
+
+    if not cases:
+        console.print("[yellow]No cases found.[/yellow] Use [bold cyan]forensic-toolkit case create[/bold cyan] to create one.")
+        return
+
     table = Table(
         title="Cases",
         box=box.HEAVY,
