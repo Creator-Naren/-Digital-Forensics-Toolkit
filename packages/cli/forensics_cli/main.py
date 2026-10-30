@@ -53,6 +53,7 @@ def list_cases():
             border_style="yellow",
             padding=(1, 2)
         ))
+        console.print("[yellow]No cases found.[/yellow] Use [bold cyan]forensic-toolkit case create[/bold cyan] to create one.")
         return
 
     table = Table(
